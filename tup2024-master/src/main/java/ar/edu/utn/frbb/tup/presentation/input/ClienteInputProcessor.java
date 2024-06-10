@@ -2,6 +2,7 @@ package ar.edu.utn.frbb.tup.presentation.input;
 
 import ar.edu.utn.frbb.tup.model.Cliente;
 import ar.edu.utn.frbb.tup.model.TipoPersona;
+import ar.edu.utn.frbb.tup.presentation.validaciones.Validaciones;
 import ar.edu.utn.frbb.tup.service.control.ClienteService;
 import ar.edu.utn.frbb.tup.service.exception.ClienteAlreadyExistsException;
 
@@ -27,8 +28,10 @@ public class ClienteInputProcessor extends BaseInputProcessor{
         cliente.setApellido(apellido);
 
         System.out.println("Ingrese el DNI del cliente:"); //CAMBIOS MIOS ingresar dni
+
         long dni = scanner.nextLong();
         scanner.nextLine();
+        Validaciones.validarDni(dni);
         cliente.setDni(dni);
 
         System.out.println("Ingrese la fecha de nacimiento del cliente (Formato: YYYY-MM-DD):"); //CAMBIOS MIOS ingresar fecha nacimiento
@@ -83,3 +86,4 @@ public class ClienteInputProcessor extends BaseInputProcessor{
 
     }
 }
+

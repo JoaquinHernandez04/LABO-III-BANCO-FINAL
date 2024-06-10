@@ -60,7 +60,7 @@ public class SummitMovimientos {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // e.ArchivoIlegibleException("Error al leer el archivo de cuentas");
         }
         return null; // Si no se encuentra la cuenta
     }
@@ -78,7 +78,7 @@ public class SummitMovimientos {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // e.ArchivoIlegibleException("Error al leer el archivo de cuentas");
         }
         return 0.0; // Si no se encuentra la cuenta
     }
